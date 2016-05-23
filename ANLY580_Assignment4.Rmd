@@ -122,6 +122,17 @@ This is the example to use ggplot2, which is one decent tool in R to visualize t
 ## Shanfeng	Tang
 ## Russell	Taylor
 ## Gokul Krishna	Turaga
+This is an excerise to map my favourite restaurants in my area, using leaflet package
+```{r, echo=T}
+Restaurants <- c("<b>Tavola</b> - Great Food, Excellent selction of wines", "<b>Lampo Neapolitan Pizzeria </b>- Perfecto Pizza!!", "<b>Lemon Grass </b>- Delicious Thai Food" )
+Lat <- c(38.027319, 38.027319,38.034545)
+Lon <- c(-78.475410, -78.476836, -78.499172)
+df <- data.frame(Lat, Lon, Restaurants)
+library(leaflet)
+mymap <- leaflet() %>% addTiles()
+mymap%>% addMarkers(data=df, popup = df$Restaurants)
+```
+
 ## Bongyong	Uh
 ## Xinting	Zhang
 ## Sicong	Zheng
